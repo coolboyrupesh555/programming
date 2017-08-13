@@ -3,7 +3,7 @@
 	Open Source 
 	Email: Rajbharrupesh2@gmail.com
 	css(bootstrap )having some problem
-	not working Proper in diffrence resolution
+	not working Proper in Different resolution
 -->
 <?php
 session_start();
