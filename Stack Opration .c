@@ -5,7 +5,7 @@ Opration into stack..
 */
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE
+#define SIZE 100
 
 struct Stack{
 	int top;
