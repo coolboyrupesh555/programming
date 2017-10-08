@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/*
+This is Not Good Logic YOu guys Can Make Good Logic
+*/
+
+
 void exlogic(){
 	
 	int array[50],i,find,size,temp,index;
