@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Welcome</title>
+        <link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            td{
+                height: 150px;
+                width:150px;
+                text-align: center;
+                font-size: 70px;
+                border: solid 1px;
+            }
+            *{
+                font-family: 'Yellowtail', cursive;
+                }
+            #usermsg{
+                font-size: 30px;
+            }
+            
+
+        </style>
+        <script>
+
+            document.turn = "X";
+
+            function userTurn(msg){
+
+                 var usermsg = document.turn;
+                var usetext = "Player"+ "  " + usermsg +" " +"Turn Now";
+
+              document.getElementById("usermsg").innerText=usetext; 
+            }
+
+            function userMove(event){              
+                if(event.innerText == ""){
+                    event.innerText = document.turn;
+                     var result = checkWinner(document.turn);
+                    if(result){
+                        alert(" Player"+ "  "+ document.turn + " Won " + "   " +"* When You Press Ok Page Will Reload*");
+                        location.reload();
+                    }
+                    switchUser();
+
+                   
+                   
+                }else{
+                    var errormsg = "That box Alredy Filled Try other";
+                    document.getElementById("usermsg").innerText = errormsg;
+                }
+               
+            }
+
+           function switchUser(){
+             //  console.log(getData(1));
+
+               if(document.turn == "X"){
+                   document.turn = "O";
+               }else{
+                   document.turn = "X";
+               }
+               userTurn();
+           }
+
+           function getData(value){
+
+                return document.getElementById("num"+value).innerHTML;
+
+           }
+
+           function checkWinner(compare){
+
+                var result = false;
+
+
+                var one = getData(1);
+                var two = getData(2);
+                var three = getData(3);
+
+                var four = getData(4);
+                var five = getData(5);
+                var six = getData(6);
+
+                var seven = getData(7);
+                var eight = getData(8);
+                var nine = getData(9);
+
+                if(one == compare && two == compare && three == compare || four == compare && five == compare && six == compare || seven == compare && eight == compare && nine == compare){
+
+                    result = true;
+                }
+
+                if(one == compare && four == compare && seven == compare || two == compare && five == compare && eight == compare || three == compare && six == compare && nine == compare){
+
+                    result = true;
+                }
+
+                if(one == compare && five == compare && nine == compare || three == compare && five == compare && seven == compare){
+                    result = true;
+                }
+
+            return result;
+
+           }
+
+            </script>
+    </head>
+ <body onload="userTurn();">
+    <div class="container">
+     <center>
+        <div class="breadcrumb"> <h1>Tic tac Toe Game</h1></div>
+         <br>
+     <div id="usermsg" class="breadcrumb"> Userturn goes here </div>
+     <br>
+     <br>
+     <table border="1">
+         <tr>
+             <td id="num1" onclick="userMove(this);"></td>
+             <td id="num2" onclick="userMove(this);"></td>
+             <td  id="num3" onclick="userMove(this);"></td>
+         </tr>
+         <tr>
+                <td  id="num4" onclick="userMove(this);"></td>
+                <td  id="num5" onclick="userMove(this);"></td>
+                <td id="num6" onclick="userMove(this);"></td>
+            </tr>
+            <tr>
+                    <td id="num7" onclick="userMove(this);"></td>
+                    <td  id="num8" onclick="userMove(this);"></td>
+                    <td  id="num9" onclick="userMove(this);"></td>
+                </tr>
+    </table>
+</center>
+</div>
+</body>
+</html>
