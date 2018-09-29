@@ -1,7 +1,4 @@
 <!---
-	This Thing Is made by Rupesh Rajbhar 
-	Open Source 
-	Email: Rajbharrupesh2@gmail.com
 	css(bootstrap )having some problem
 	not working Proper in Different resolution
 	media css query is not working properly	
