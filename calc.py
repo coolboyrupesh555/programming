@@ -1,5 +1,5 @@
 from tkinter import*
-'''Support Open Source '''
+
 
 window = Tk()
 everywhere = ""
