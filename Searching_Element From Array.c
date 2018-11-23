@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-/*
-This is Not Good Logic YOu guys Can Make Good Logic
-*/
-
 
 void exlogic(){
 	
